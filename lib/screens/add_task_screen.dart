@@ -4,8 +4,13 @@ import 'package:flutter/material.dart';
 import '../constants.dart';
 
 class AddTaskScreen extends StatelessWidget {
+  final Function(String?)? addTaskCallback;
+  AddTaskScreen(this.addTaskCallback);
+
   @override
   Widget build(BuildContext context) {
+    String? newTaskTitle;
+
     return Container(
       margin: EdgeInsets.only(),
       color: Color(0xff757575),
@@ -33,6 +38,9 @@ class AddTaskScreen extends StatelessWidget {
               height: 15,
             ),
             TextField(
+              onChanged: (value) {
+                newTaskTitle = value;
+              },
               autofocus: true,
               textAlign: TextAlign.center,
               decoration: InputDecoration(
@@ -42,7 +50,7 @@ class AddTaskScreen extends StatelessWidget {
             SizedBox(height: 4),
             TextButton(
               style: TextButton.styleFrom(backgroundColor: Colors.green),
-              onPressed: () {},
+              onPressed: addTaskCallback!(newTaskTitle),
               child: Text(
                 'Add',
                 style: kChecklistTextStyle.copyWith(
