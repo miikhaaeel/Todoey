@@ -50,7 +50,9 @@ class AddTaskScreen extends StatelessWidget {
             SizedBox(height: 4),
             TextButton(
               style: TextButton.styleFrom(backgroundColor: Colors.green),
-              onPressed: addTaskCallback!(newTaskTitle),
+              onPressed: () {
+                addTaskCallback!(newTaskTitle);
+              },
               child: Text(
                 'Add',
                 style: kChecklistTextStyle.copyWith(
