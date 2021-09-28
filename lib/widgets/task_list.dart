@@ -12,7 +12,7 @@ class TaskList extends StatelessWidget {
       builder: (context, taskData, child) {
         return ListView.builder(
           padding: EdgeInsets.only(top: 30, left: 20, right: 20),
-          itemCount: taskData.tasks.length,
+          itemCount: taskData.taskCount,
           itemBuilder: (context, index) {
             return TaskTile(
               isChecked: taskData.tasks[index].isDone,
