@@ -19,9 +19,7 @@ class TaskList extends StatelessWidget {
               // Provider.of<TaskData>(context).tasks[index].isDone,
               taskTitle: taskData.tasks[index].name,
               checkBoxCallback: (checkBoxstate) {
-                // setState(() {
-                //   widget.tasks![index].toggleDone();
-                // });
+                //taskData.tasks[index].toggleDone();
               },
             );
           },

@@ -6,7 +6,6 @@ import 'package:provider/provider.dart';
 import 'package:todoey/models/task_data.dart';
 
 class TaskScreen extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -17,16 +16,7 @@ class TaskScreen extends StatelessWidget {
         onPressed: () {
           showModalBottomSheet(
             context: context,
-            builder: (context) => AddTaskScreen(
-              (newTaskTitle) {
-                // setState(() {
-                //   tasks.add(
-                //     Task(name: newTaskTitle),
-                //   );
-                //   Navigator.pop(context);
-                // });
-              },
-            ),
+            builder: (context) => AddTaskScreen(),
           );
         },
       ),
