@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'package:todoey/models/task_data.dart';
@@ -50,7 +49,8 @@ class AddTaskScreen extends StatelessWidget {
             TextButton(
               style: TextButton.styleFrom(backgroundColor: Colors.green),
               onPressed: () {
-                Provider.of<TaskData>(context, listen: false).addTask(newTaskTitle!);
+                Provider.of<TaskData>(context, listen: false)
+                    .addTask(newTaskTitle!);
                 Navigator.pop(context);
               },
               child: Text(
